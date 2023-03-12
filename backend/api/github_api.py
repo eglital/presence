@@ -16,11 +16,11 @@ class Issue:
     @staticmethod
     def create_from_response(issue):
         return Issue(
-            url=issue.get("url"),
+            url=issue.get("html_url"),
             number=issue.get("number"),
             title=issue.get("title"),
             author_name=issue.get("user", {}).get("login"),
-            author_url=issue.get("user", {}).get("url"),
+            author_url=issue.get("user", {}).get("html_url"),
             created_at=issue.get("created_at"),
         )
 
