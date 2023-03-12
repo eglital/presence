@@ -2,6 +2,7 @@ version: '3'
 
 services:
   backend:
+    image: presence_backend:latest
     build: 
       context: ./backend
     command: bash -c "python3 /app/manage.py migrate &&
