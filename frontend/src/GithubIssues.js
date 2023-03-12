@@ -12,7 +12,6 @@ function GithubIssues() {
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setIssues(data);
         setLoading(false);
       })
@@ -40,7 +39,16 @@ function GithubIssues() {
               {issue.title}
             </a>
             <p>Number: {issue.number}</p>
-            <p>Author: {issue.author_name}</p>
+            <p>
+              Author:{" "}
+              <a
+                href={issue.author_url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {issue.author_name}
+              </a>
+            </p>
             <p>Created At: {issue.created_at}</p>
           </div>
         ))}
